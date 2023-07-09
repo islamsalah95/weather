@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="shortcut icon" href="">
+    <link rel="shortcut icon" href="#">
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <title>Weather Forecast</title>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://api.windy.com/assets/map-forecast/libBoot.js"></script>
+    <style>
+      #windy {
+        width: 80%;
+        height: 600px;
+      }
+
+      #windy #bottom, #windy #embed-zoom, #windy #mobile-ovr-select, #windy #plugin-menu{
+        z-index: 10000000000;
+      }
+      #plugin-menu .build-info{
+        display: none;
+      }
+      #windy .timecode{
+        z-index: 100000000000;
+      }
+      #windy #logo-wrapper{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script>
+      const options = {
+        key: '2G7vudMjPbHfg7gFY1qwDBk1jwc65YlK',
+        lat: 33.312805,
+        lon: 44.361488,
+        zoom: 7,
+        timestamp: Date.now() + 3 * 24 * 60 * 60 * 1000,
+        hourFormat: '12h',
+      }
+
+      windyInit(options, windyAPI => {});
+    </script>
+  </body>
+</html>
