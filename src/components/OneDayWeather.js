@@ -340,7 +340,7 @@ const OneDayWeather = ({ weather, loading, error }) => {
         r +
         0.1;
 
-    if(wb == ttt || Math.abs(parseInt(wb) - parseInt(ttt)) < 1) {
+    if(wb === ttt || Math.abs(parseInt(wb) - parseInt(ttt)) < 1) {
       vppp = 100;
     }
 
