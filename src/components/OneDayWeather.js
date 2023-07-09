@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { format } from "date-fns";
-import Button from "react-bootstrap/Button";
 import Graphs from "./Graphs";
 
 const OneDayWeather = ({ weather, loading, error }) => {
@@ -8,7 +7,6 @@ const OneDayWeather = ({ weather, loading, error }) => {
       weather &&
       weather.current.last_updated.toString(" ").split(" ")[1].split(":")[0];
   var wind_direction = weather && weather.current.wind_degree.toString();
-  var up_wb;
 
   const [dryTemperature, setDryTemperature] = useState(null);
   const [seaLevelPressure, setSeaLevelPressure] = useState(null);
@@ -287,7 +285,7 @@ const OneDayWeather = ({ weather, loading, error }) => {
 
       saturatedMixingRatio = parseFloat(saturatedMixingRatio.toFixed(2));
 
-      if(Number(wB) == Number(temp) || Math.abs(parseInt(wB) - parseInt(temp)) < 1) {
+      if(Number(wB) === Number(temp) || Math.abs(parseInt(wB) - parseInt(temp)) < 1) {
         humitityRH = 100;
       }
 

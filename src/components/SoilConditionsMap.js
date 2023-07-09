@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 
 const SoilConditionsMap = ({ soilData }) => {
   const [mapCenter, setMapCenter] = useState([51.505, -0.09]);
-  const [zoom, setZoom] = useState(13);
+  const [zoom] = useState(13);
 
   useEffect(() => {
     if (soilData && soilData.length > 0) {
